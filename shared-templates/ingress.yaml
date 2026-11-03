@@ -31,6 +31,21 @@ spec:
   {{- if and $ingressSupportsIngressClassName .Values.ingress.ingressClassName }}
   ingressClassName: {{ .Values.ingress.ingressClassName }}
   {{- end }}
+  {{- with .Values.ingress.defaultBackend }}
+  {{- if .enabled }}
+  {{- if $ingressApiIsStable }}
+  defaultBackend:
+    service:
+      name: {{ .serviceName | default $fullName }}
+      port:
+        number: {{ .servicePort | default $toplevel.Values.service.port }}
+  {{- else }}
+  backend:
+    serviceName: {{ .serviceName | default $fullName }}
+    servicePort: {{ .servicePort | default $toplevel.Values.service.port }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
   rules:
   {{- range .Values.ingress.hosts }}
     - host: {{ tpl .host $ | quote }}

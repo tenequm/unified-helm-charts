@@ -1,0 +1,25 @@
+# Rendered by the kubeconform task: a defaultBackend-only ingress (the Tailscale
+# operator's shape) next to a host-rule one.
+service:
+  enabled: true
+  port: 23380
+ingress:
+  enabled: true
+  name: tailnet
+  ingressClassName: tailscale
+  hosts: []
+  defaultBackend:
+    enabled: true
+  tls:
+    - hosts: [svc]
+ingress_secondary:
+  enabled: true
+  ingressClassName: nginx
+  pathType: Prefix
+  defaultBackend:
+    enabled: true
+    serviceName: fallback
+    servicePort: 8080
+  hosts:
+    - host: example.com
+      paths: [/]

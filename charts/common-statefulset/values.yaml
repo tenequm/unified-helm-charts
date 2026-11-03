@@ -80,6 +80,13 @@ ingress:
   # The path type
   pathType: ImplementationSpecific # or Prefix
   annotations: {}
+  # The backend for requests no rule matches, and the only one some controllers (eg the
+  # Tailscale operator) honour; set hosts: [] for an ingress that has nothing else. This
+  # release's Service on service.port unless serviceName/servicePort are set.
+  defaultBackend:
+    enabled: false
+    serviceName: ""
+    servicePort: null
   hosts:
     - host: chart-example.local
       paths:
@@ -98,6 +105,13 @@ ingress_secondary:
   # The path type
   pathType: ImplementationSpecific # or Prefix
   annotations: {}
+  # The backend for requests no rule matches, and the only one some controllers (eg the
+  # Tailscale operator) honour; set hosts: [] for an ingress that has nothing else. This
+  # release's Service on service.port unless serviceName/servicePort are set.
+  defaultBackend:
+    enabled: false
+    serviceName: ""
+    servicePort: null
   hosts:
     - host: chart-example.local
       paths:

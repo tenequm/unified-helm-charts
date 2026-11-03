@@ -21,7 +21,8 @@ helm install my-svc oci://ghcr.io/tenequm/unified-helm-charts/common-deployment 
 
 ## Exposing a service
 
-`ingress` and `ingress_secondary` render Ingresses. `route.<name>` renders Gateway API routes
+`ingress` and `ingress_secondary` render Ingresses, with an optional `defaultBackend` for
+controllers that ignore host rules (the Tailscale operator). `route.<name>` renders Gateway API routes
 (`HTTPRoute` or `GRPCRoute`), with the same keys as the grafana, kube-prometheus-stack and loki
 charts. Both can be on at once, which is how you migrate from one to the other.
 
