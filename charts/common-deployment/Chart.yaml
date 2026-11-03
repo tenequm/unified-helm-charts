@@ -6,3 +6,5 @@ description: The Universal Deployment Helm Chart
 keywords:
   - deployment
   - helm
+sources:
+  - https://github.com/tenequm/unified-helm-charts

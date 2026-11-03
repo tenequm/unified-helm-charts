@@ -15,7 +15,7 @@ plugins:
         helm package .
         echo "Publishing chart to GitHub OCI registry"
         echo "$GITHUB_TOKEN" | helm registry login ghcr.io -u $GITHUB_ACTOR --password-stdin
-        helm push common-deployment-${nextRelease.version}.tgz oci://ghcr.io/gasp-xyz/helm-charts
+        helm push common-deployment-${nextRelease.version}.tgz oci://ghcr.io/tenequm/unified-helm-charts
   - - '@semantic-release/git'
     - assets:
         - CHANGELOG.md

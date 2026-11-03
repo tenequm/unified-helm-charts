@@ -5,6 +5,5 @@ Reference used from: <https://github.com/DevOps-Nirvana/Universal-Kubernetes-Hel
 ## Usage
 
 ```bash
-helm repo add common-statefulset https://gasp-xyz.github.io/helm-charts
-helm install common-statefulset common-statefulset/common-statefulset
+helm install common-statefulset oci://ghcr.io/tenequm/unified-helm-charts/common-statefulset
 ```

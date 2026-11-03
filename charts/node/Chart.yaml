@@ -4,3 +4,5 @@ description: Mangata Node Helm chart for Kubernetes
 icon: https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png
 type: application
 version: 2.3.0
+sources:
+  - https://github.com/tenequm/unified-helm-charts

@@ -5,6 +5,5 @@ Reference used from: <https://github.com/DevOps-Nirvana/Universal-Kubernetes-Hel
 ## Usage
 
 ```bash
-helm repo add common-deployment https://gasp-xyz.github.io/helm-charts
-helm install common-deployment common-deployment/common-deployment
+helm install common-deployment oci://ghcr.io/tenequm/unified-helm-charts/common-deployment
 ```

@@ -6,3 +6,5 @@ description: The Universal StatefulSet Helm Chart
 keywords:
   - statefulset
   - helm
+sources:
+  - https://github.com/tenequm/unified-helm-charts
