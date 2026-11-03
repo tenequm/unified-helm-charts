@@ -1,3 +1,10 @@
+# [common-statefulset-v1.2.0](https://github.com/tenequm/unified-helm-charts/compare/common-statefulset-v1.1.1...common-statefulset-v1.2.0) (2026-11-03)
+
+
+### Features
+
+* optional defaultBackend on both ingresses ([7ec4ec1](https://github.com/tenequm/unified-helm-charts/commit/7ec4ec1ced0f0c00716890e743df0673c1e664e6))
+
 # [common-statefulset-v1.1.1](https://github.com/tenequm/unified-helm-charts/compare/common-statefulset-v1.1.0...common-statefulset-v1.1.1) (2026-11-03)
 
 
