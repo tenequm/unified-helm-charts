@@ -104,6 +104,44 @@ ingress_secondary:
         - /
   tls: []
 
+# Gateway API routes, alongside or instead of the ingresses above. Each key renders one
+# route: "main" is named after the release, any other key gets a "-<key>" suffix
+# (a second route, like ingress_secondary). Same keys as the grafana,
+# kube-prometheus-stack and loki charts.
+route:
+  main:
+    enabled: false
+    apiVersion: gateway.networking.k8s.io/v1
+    # HTTPRoute or GRPCRoute; for GRPCRoute set matches to [] or gRPC matches
+    kind: HTTPRoute
+    annotations: {}
+    labels: {}
+    # Required: the Gateway listener(s) to attach to, eg:
+    # - name: my-gateway
+    #   namespace: gateway
+    #   sectionName: https-example-com
+    parentRefs: []
+    hostnames: []
+    # - example.com
+    # The main rule's backend: this release's Service on service.port, unless one of
+    # backendRefs (any Services, eg another release's) or backendPort is set.
+    backendRefs: []
+    backendPort: null
+    matches:
+      - path:
+          type: PathPrefix
+          value: /
+    filters: []
+    # eg {request: 0s} to lift Envoy's 15s default for streaming or long requests
+    timeouts: {}
+    sessionPersistence: {}
+    # Rules rendered before the main rule, as written (templated); any rule shape,
+    # including filter-only redirects or backendRefs to other Services.
+    additionalRules: []
+    # Render only an HTTP->HTTPS redirect rule (for a plain-HTTP listener); the main
+    # rule, matches and filters are then skipped.
+    httpsRedirect: false
+
 # Service definitions
 service:
   enabled: false

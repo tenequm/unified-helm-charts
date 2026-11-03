@@ -1,0 +1,53 @@
+# Rendered by the kubeconform task: every route shape the shared route template supports.
+service:
+  enabled: true
+  port: 8080
+route:
+  main:
+    enabled: true
+    annotations:
+      external-dns.alpha.kubernetes.io/controller: "off"
+    labels:
+      tier: edge
+    parentRefs:
+      - name: public
+        namespace: gateway
+        sectionName: https-example-com
+    hostnames: ["{{ .Release.Name }}.example.com"]
+    timeouts:
+      request: 0s
+    additionalRules:
+      - matches:
+          - path:
+              type: Exact
+              value: /metrics
+        filters:
+          - type: RequestRedirect
+            requestRedirect:
+              path:
+                type: ReplaceFullPath
+                replaceFullPath: /
+              statusCode: 302
+      - matches:
+          - path:
+              type: PathPrefix
+              value: /api
+        backendRefs:
+          - name: other-service
+            port: 9000
+  grpc:
+    enabled: true
+    kind: GRPCRoute
+    parentRefs:
+      - name: public
+        namespace: gateway
+    hostnames: [grpc.example.com]
+    backendPort: 9090
+    matches: []
+  redirect:
+    enabled: true
+    parentRefs:
+      - name: public
+        namespace: gateway
+        sectionName: http
+    httpsRedirect: true

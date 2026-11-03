@@ -6,6 +6,8 @@ fileGroups:
     - .helmignore
     - Chart.yaml
     - values.yaml
+    - ci/**/*
+    - /shared-templates/**/*
 
 tasks:  
   lint:
@@ -13,9 +15,8 @@ tasks:
     inputs: ['@globs(sources)']
 
   kubeconform:
-    script: |
-      helm template . | kubeconform -kubernetes-version 1.31.0 -strict
-    inputs: ['@globs(sources)']
+    command: 'bash $workspaceRoot/scripts/kubeconform.sh'
+    inputs: ['@globs(sources)', '/scripts/kubeconform.sh']
 
   release:
     command: yarn run release
