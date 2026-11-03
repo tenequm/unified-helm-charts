@@ -1,3 +1,10 @@
+# [common-statefulset-v1.3.0](https://github.com/tenequm/unified-helm-charts/compare/common-statefulset-v1.2.0...common-statefulset-v1.3.0) (2026-11-03)
+
+
+### Features
+
+* grpc probe type and enableServiceLinks switch ([0cc1b8c](https://github.com/tenequm/unified-helm-charts/commit/0cc1b8cea7d5b02b4af2125b96fe3f4c2e7d3aa5))
+
 # [common-statefulset-v1.2.0](https://github.com/tenequm/unified-helm-charts/compare/common-statefulset-v1.1.1...common-statefulset-v1.2.0) (2026-11-03)
 
 
