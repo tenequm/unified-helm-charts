@@ -1,9 +1,0 @@
-apiVersion: v2
-name: relaychain-testnet
-description: A Helm chart for deploying relaychain test network
-icon: https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png
-type: application
-version: 1.1.0
-appVersion: v0.9.37
-sources:
-  - https://github.com/tenequm/unified-helm-charts

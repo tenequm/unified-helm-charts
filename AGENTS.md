@@ -1,9 +1,8 @@
 # unified-helm-charts
 
 Universal Helm charts: a service is deployed by a values file against a generic chart,
-never by a chart of its own. `common-deployment` and `common-statefulset` are the generic
-charts; `node` and `relaychain-testnet` are app-specific charts inherited from upstream
-(gasp-xyz) and are not extended.
+never by a chart of its own: `common-deployment` and `common-statefulset`. App-specific
+charts do not belong here.
 
 ## Rules
 

@@ -2904,12 +2904,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node@workspace:charts/node":
-  version: 0.0.0-use.local
-  resolution: "node@workspace:charts/node"
-  languageName: unknown
-  linkType: soft
-
 "nopt@npm:^8.0.0":
   version: 8.1.0
   resolution: "nopt@npm:8.1.0"
@@ -3765,12 +3759,6 @@ __metadata:
   checksum: 10c0/316229bd8a4acc29a362a7a3862ff809e608256f0fd9e0b133412b43d6a9ea18743756a0ec5ee1467a5384e1023602b85461b3d88d1336b11879e42f7cf02c12
   languageName: node
   linkType: hard
-
-"relaychain-testnet@workspace:charts/relaychain-testnet":
-  version: 0.0.0-use.local
-  resolution: "relaychain-testnet@workspace:charts/relaychain-testnet"
-  languageName: unknown
-  linkType: soft
 
 "require-directory@npm:^2.1.1":
   version: 2.1.1

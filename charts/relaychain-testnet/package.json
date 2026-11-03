@@ -1,7 +1,0 @@
-{
-  "name": "relaychain-testnet",
-  "private": true,
-  "scripts": {
-    "release": "run -T semantic-release"
-  }
-}

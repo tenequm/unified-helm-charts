@@ -4,8 +4,6 @@ $schema: 'https://moonrepo.dev/schemas/workspace.json'
 projects:
   common-deployment: 'charts/common-deployment'
   common-statefulset: 'charts/common-statefulset'
-  node: 'charts/node'
-  relaychain-testnet: 'charts/relaychain-testnet'
 
 vcs:
   manager: 'git'

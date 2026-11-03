@@ -9,8 +9,6 @@ file, so a service never needs a chart of its own. A fork of
 | --- | --- |
 | `common-deployment` | Any stateless service: Deployment, Service, Ingress and/or Gateway API routes, HPA, PDB, ServiceMonitor, RBAC |
 | `common-statefulset` | The same for a StatefulSet |
-| `node` | A Mangata (Gasp) blockchain node; inherited from upstream |
-| `relaychain-testnet` | A two-validator Polkadot relaychain test network; inherited from upstream |
 
 ## Install
 
