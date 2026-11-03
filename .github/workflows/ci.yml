@@ -36,7 +36,9 @@ jobs:
       
       - run: moon ci :lint :kubeconform
 
-      - run: moon :release --concurrency 1
+      # One chart at a time: releases share this checkout, and parallel ones race on the
+      # release commit and its push (moon ignored --concurrency 1 here).
+      - run: for p in common-deployment common-statefulset node relaychain-testnet; do moon run "$p:release"; done
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
