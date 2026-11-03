@@ -1,0 +1,13 @@
+# Rendered by the kubeconform task: gRPC probes and service links off.
+enableServiceLinks: false
+service:
+  enabled: true
+  port: 8080
+livenessProbe:
+  enabled: true
+  probeType: grpc
+  port: 9092
+readinessProbe:
+  enabled: true
+  probeType: grpc
+  port: 9092

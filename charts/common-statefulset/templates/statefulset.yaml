@@ -55,6 +55,10 @@ spec:
 {{- end }}
     spec:
 
+{{- if eq (toString .Values.enableServiceLinks) "false" }}
+      enableServiceLinks: false
+{{- end }}
+
 {{- if .Values.shareProcessNamespace }}
 {{- if (eq .Values.shareProcessNamespace true) }}
       shareProcessNamespace: true
@@ -236,6 +240,9 @@ spec:
 {{- else if eq .Values.livenessProbe.probeType "tcpSocket" }}
             tcpSocket:
               port: {{ .Values.livenessProbe.port }}
+{{- else if eq .Values.livenessProbe.probeType "grpc" }}
+            grpc:
+              port: {{ .Values.livenessProbe.port }}
 {{- else if eq .Values.livenessProbe.probeType "exec" }}
             exec:
               command:
@@ -260,6 +267,9 @@ spec:
               port: {{ .Values.readinessProbe.port }}
 {{- else if eq .Values.readinessProbe.probeType "tcpSocket" }}
             tcpSocket:
+              port: {{ .Values.readinessProbe.port }}
+{{- else if eq .Values.readinessProbe.probeType "grpc" }}
+            grpc:
               port: {{ .Values.readinessProbe.port }}
 {{- else if eq .Values.readinessProbe.probeType "exec" }}
             exec:

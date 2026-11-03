@@ -27,6 +27,10 @@ priorityClassName: ""
 # See: https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/
 shareProcessNamespace: false
 
+# Set false to stop Kubernetes injecting <SERVICE>_PORT-style variables for every Service in
+# the namespace; they collide with apps that read an env var of the same name.
+enableServiceLinks: true
+
 # Image repository location (override if needed)
 image:
   # Which image to release (NOTE: ONLY SPECIFY IF YOU ARE DEPLOYING EXTERNALLY, eg from dockerhub)
@@ -243,9 +247,9 @@ livenessProbe:
   successThreshold: 1
   failureThreshold: 3
 
-  # Specify either httpGet, tcpSocket or exec
+  # Specify either httpGet, tcpSocket, grpc or exec
   # httpGet uses scheme, path and port (below)
-  # tcpSocket uses port (below)
+  # tcpSocket and grpc use port (below; grpc needs a number)
   # exec uses command (below)
   probeType: httpGet
 
@@ -266,9 +270,9 @@ readinessProbe:
   successThreshold: 2
   failureThreshold: 2
 
-  # Specify either httpGet, tcpSocket or exec
+  # Specify either httpGet, tcpSocket, grpc or exec
   # httpGet uses scheme, path and port (below)
-  # tcpSocket uses port (below)
+  # tcpSocket and grpc use port (below; grpc needs a number)
   # exec uses command (below)
   probeType: httpGet
 
