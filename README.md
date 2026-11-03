@@ -16,7 +16,7 @@ Charts are published as OCI artifacts on GHCR:
 
 ```bash
 helm install my-svc oci://ghcr.io/tenequm/unified-helm-charts/common-deployment \
-  --version 1.2.0 -f values.yaml
+  --version 1.4.0 -f values.yaml
 ```
 
 ## Exposing a service
