@@ -27,7 +27,12 @@ jobs:
         with:
           kubeconform: '0.6.7'
           helm: '3.17.1'
+      # Pinned to .prototools: the action otherwise installs the latest moon, and moon 2
+      # rejects this workspace config.
       - uses: 'moonrepo/setup-toolchain@v0'
+        with:
+          moon-version: '1.32.8'
+          proto-version: '0.47.3'
       
       - run: moon ci :lint :kubeconform
 
