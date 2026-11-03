@@ -1,3 +1,10 @@
+# [common-statefulset-v1.1.1](https://github.com/tenequm/unified-helm-charts/compare/common-statefulset-v1.1.0...common-statefulset-v1.1.1) (2026-11-03)
+
+
+### Bug Fixes
+
+* drop the gasp-xyz created-by label ([a3f5ac6](https://github.com/tenequm/unified-helm-charts/commit/a3f5ac6ca819cd38d245eb3c346e4eeb93899c6a))
+
 # [common-statefulset-v1.1.0](https://github.com/tenequm/unified-helm-charts/compare/common-statefulset-v1.0.0...common-statefulset-v1.1.0) (2026-11-03)
 
 
