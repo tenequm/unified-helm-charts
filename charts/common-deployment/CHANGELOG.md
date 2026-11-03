@@ -1,3 +1,10 @@
+# [common-deployment-v1.3.0](https://github.com/tenequm/unified-helm-charts/compare/common-deployment-v1.2.1...common-deployment-v1.3.0) (2026-11-03)
+
+
+### Features
+
+* optional defaultBackend on both ingresses ([7ec4ec1](https://github.com/tenequm/unified-helm-charts/commit/7ec4ec1ced0f0c00716890e743df0673c1e664e6))
+
 # [common-deployment-v1.2.1](https://github.com/tenequm/unified-helm-charts/compare/common-deployment-v1.2.0...common-deployment-v1.2.1) (2026-11-03)
 
 
